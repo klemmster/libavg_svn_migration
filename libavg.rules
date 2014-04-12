@@ -1,0 +1,174 @@
+create repository libavg
+end repository
+
+#
+# avg-media respositories
+
+create repository eingangsmonitore
+end repository
+
+create repository scanner
+end repository
+
+create repository videochooser
+end repository
+
+create repository videoplayer
+end repository
+
+create repository pyopenal
+end repository
+
+create repository mtc
+end repository
+
+create repository paper
+end repository
+
+create repository videochooser2
+end repository
+
+#
+# Renaming remote to removeCtrl, as remote is commonly used in git
+create repository remoteCtrl
+end repository
+
+#
+# webpage
+
+create repository www
+end repository
+
+#
+# Declare the rules
+# Note: rules must end in a slash
+#
+
+match /trunk/libavg/
+  repository libavg
+  branch master
+end match
+
+match /libavg/
+  repository libavg
+  branch master
+end match
+
+#
+# Seriously trunk/trunk?
+match /trunk/trunk/
+  repository libavg
+  branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/
+  repository mtc
+  branch master
+end match
+
+match /trunk/www/
+  repository www
+  branch master
+end match
+
+match /trunk(?:/avg_media)?/eingangsmonitore/
+    repository eingangsmonitore
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/scanner/
+    repository scanner
+    branch master
+end match
+
+match /trunk(?:/avg_media)?(?:/samples)?/videochooser/
+    repository videochooser
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/videochooser2/
+    repository videochooser2
+    branch master
+end match
+
+match /trunk/samples/pyopenal/
+    repository pyopenal
+    branch master
+end match
+
+match /trunk/avg_media/remote/
+    repository remoteCtrl
+    branch master
+end match
+
+match /trunk/avg_media/videoplayer/
+    repository videoplayer
+    branch master
+end match
+
+match /trunk/avg_media/paper/
+    repository paper
+    branch master
+end match
+
+#
+# Prepare for tags
+match /tags/([^/]+)/
+  repository libavg
+  branch tag--\1
+end match
+
+match /branches/releases/([^/]+)/
+  repository libavg
+  branch tag--\1
+end match
+
+#
+# branches
+# order is important
+match /branches/exhibitions/([^/]+)/
+  repository libavg
+  branch exhibtions/\1
+end match
+
+match /branches/experiments/([^/]+)/
+  repository libavg
+  branch experiments/\1
+end match
+
+match /branches/([^/]+)/
+  repository libavg
+  branch \1
+end match
+
+#
+# Ignore the following
+
+match /trunk/talks/
+end match
+
+match /trunk/foo
+end match
+
+match /trunk/samples/alpy/
+end match
+
+match /trunk/samples/bluetoothtest.py
+end match
+
+match /trunk/samples/logos/
+end match
+
+match /trunk/samples/reboot/
+end match
+
+#
+# @uzadow
+# sorry for breaking history, but I don't now how to map this free floating function
+# to repositories
+match /trunk/avg_media/scrollbar.py
+end match
+
+match /trunk/avg_media/testvectors/
+end match
+
