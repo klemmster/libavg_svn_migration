@@ -1,36 +1,6 @@
+#
+# libavg main
 create repository libavg
-end repository
-
-#
-# avg-media respositories
-
-create repository eingangsmonitore
-end repository
-
-create repository scanner
-end repository
-
-create repository videochooser
-end repository
-
-create repository videoplayer
-end repository
-
-create repository pyopenal
-end repository
-
-create repository mtc
-end repository
-
-create repository paper
-end repository
-
-create repository videochooser2
-end repository
-
-#
-# Renaming remote to removeCtrl, as remote is commonly used in git
-create repository remoteCtrl
 end repository
 
 #
@@ -40,16 +10,78 @@ create repository www
 end repository
 
 #
+# mtc
+
+create repository mtc-Snatch
+end repository
+
+create repository mtc-alles_paletti
+end repository
+
+create repository mtc-appChooser
+end repository
+
+create repository mtc-c-info
+end repository
+
+create repository mtc-emp_command
+end repository
+
+create repository mtc-geneatd
+end repository
+
+create repository mtc-images
+end repository
+
+create repository mtc-lemming
+end repository
+
+create repository mtc-lightbox
+end repository
+
+create repository mtc-magictouch
+end repository
+
+create repository mtc-mediaschubser
+end repository
+
+create repository mtc-multitet
+end repository
+
+create repository mtc-planarity
+end repository
+
+create repository mtc-poker5card
+end repository
+
+create repository mtc-remote
+end repository
+
+create repository mtc-sponc
+end repository
+
+create repository mtc-troff
+end repository
+
+create repository mtc-videochooser2
+end repository
+
+create repository mtc-volumeControl
+end repository
+
+create repository mtc-mtc
+end repository
+
+#
 # Declare the rules
 # Note: rules must end in a slash
+# Matches svn paths to git repositories
 #
 
-match /trunk/libavg/
-  repository libavg
-  branch master
-end match
+#
+# libavg rules
 
-match /libavg/
+match (?:/trunk)?/libavg/
   repository libavg
   branch master
 end match
@@ -61,54 +93,114 @@ match /trunk/trunk/
   branch master
 end match
 
-match /trunk(?:/avg_media)?/mtc/
-  repository mtc
-  branch master
+
+#
+# mtc rules
+match /trunk(?:/avg_media)?/mtc/volumeControl/
+    repository mtc-volumeControl
+    branch master
 end match
 
+match /trunk(?:/avg_media)?(?:/mtc)?/videochooser2/
+    repository mtc-videochooser2
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/troff/
+    repository mtc-troff
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/sponc/
+    repository mtc-sponc
+    branch master
+end match
+
+match /trunk(?:/avg_media)?(?:/mtc)?/remote/
+    repository mtc-remote
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/poker5card/
+    repository mtc-poker5card
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/planarity/
+    repository mtc-planarity
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/multitet/
+    repository mtc-multitet
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/mediaschubser/
+    repository mtc-mediaschubser
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/magictouch/
+    repository mtc-magictouch
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/lightbox/
+    repository mtc-lightbox
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/lemming/
+    repository mtc-lemming
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/images/
+    repository mtc-images
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/geneatd/
+    repository mtc-geneatd
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/emp_command/
+    repository mtc-emp_command
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/c-info/
+    repository mtc-c-info
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/appChooser/
+    repository mtc-appChooser
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/alles_paletti/
+    repository mtc-alles_paletti
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/Snatch/
+    repository mtc-Snatch
+    branch master
+end match
+
+match /trunk(?:/avg_media)?/mtc/
+    repository mtc-mtc
+    branch master
+end match
+
+#
+# web rules
 match /trunk/www/
   repository www
   branch master
-end match
-
-match /trunk(?:/avg_media)?/eingangsmonitore/
-    repository eingangsmonitore
-    branch master
-end match
-
-match /trunk(?:/avg_media)?/scanner/
-    repository scanner
-    branch master
-end match
-
-match /trunk(?:/avg_media)?(?:/samples)?/videochooser/
-    repository videochooser
-    branch master
-end match
-
-match /trunk(?:/avg_media)?/videochooser2/
-    repository videochooser2
-    branch master
-end match
-
-match /trunk/samples/pyopenal/
-    repository pyopenal
-    branch master
-end match
-
-match /trunk/avg_media/remote/
-    repository remoteCtrl
-    branch master
-end match
-
-match /trunk/avg_media/videoplayer/
-    repository videoplayer
-    branch master
-end match
-
-match /trunk/avg_media/paper/
-    repository paper
-    branch master
 end match
 
 #
@@ -142,7 +234,61 @@ match /branches/([^/]+)/
 end match
 
 #
-# Ignore the following
+# Legacy -- Aka old stuff just kept for historic reasons, maybe
+
+create repository legacy-scanner
+end repository
+
+match /trunk(?:/avg_media)?/scanner/
+    repository legacy-scanner
+    branch master
+end match
+
+create repository legacy-eingangsmonitore
+end repository
+
+match /trunk(?:/avg_media)?/eingangsmonitore/
+    repository legacy-eingangsmonitore
+    branch master
+end match
+
+create repository legacy-videochooser
+end repository
+
+match /trunk(?:/avg_media)?(?:/samples)?/videochooser/
+    repository legacy-videochooser
+    branch master
+end match
+
+create repository legacy-pyopenal
+end repository
+
+match /trunk/samples/pyopenal/
+    repository legacy-pyopenal
+    branch master
+end match
+
+create repository legacy-videoplayer
+end repository
+
+match /trunk/avg_media/videoplayer/
+    repository legacy-videoplayer
+    branch master
+end match
+
+create repository legacy-testvectors
+end repository
+
+match /trunk/avg_media/testvectors/
+    repository legacy-testvectors
+    branch master
+end match
+
+
+#
+# Ignore
+match /trunk/avg_media/paper/
+end match
 
 match /trunk/talks/
 end match
@@ -168,7 +314,3 @@ end match
 # to repositories
 match /trunk/avg_media/scrollbar.py
 end match
-
-match /trunk/avg_media/testvectors/
-end match
-
