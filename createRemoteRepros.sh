@@ -1,6 +1,17 @@
 #/bin/bash
 
-# cd libavg_git/libavg
-curl -u 'klemmster' https://api.github.com/orgs/libavg/repos -d '{"name":"libavg", "homepage":"https://www.libavg.de", "has_wiki":"False", "has_downloads":"False"}'
-git remote add origin github:libavg/libavg.git
-git push -u origin master
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
+
+find libavg_git -mindepth 1 -maxdepth 1 -type d -execdir sh -c ' \
+    cd {} &&
+    repName=${PWD##*/}
+    gcli repo create -o libavg --home="https://www.libavg.de" --issues=true --wiki=false --quiet=true $repName
+    git remote add origin github:libavg/$repName.git
+    git push -u origin master
+    git branch -a | grep -v "exhibtions" | grep -v "master" | sed s/..// |
+    while read branchname; do
+        git push -u origin $branchname
+    done
+    ' \
+\;

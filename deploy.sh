@@ -6,3 +6,4 @@ cd libavg_git
 svn2git --rules ../libavg.rules --identity-map ../authors.txt --add-metadata --add-metadata-notes /home/richy/Projects/Archimedes/libavg_gitmigrate/libavg_svn_copy
 cd $DIR
 ./createTags.sh
+./createRemoteRepros.sh

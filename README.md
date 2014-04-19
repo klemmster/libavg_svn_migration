@@ -3,6 +3,14 @@
 * kde's [svn2git][1] -- don't google it, there are more then one tools with the same name
 * git & svn installed
 * ~1GB of Diskspace
+* [github_cli][2]
+
+#Setup
+```
+gcli init
+gcli authorize
+```
+
 
 #Convert
 Have a look at the first link and setup a local svn mirror of libavgs svn
@@ -22,3 +30,4 @@ http://blog.smartbear.com/software-quality/migrating-from-subversion-to-git-less
 
 
   [1]: https://gitorious.org/svn2git%20svn2git
+  [2]: https://github.com/peter-murach/github_cli
