@@ -29,5 +29,5 @@ cd libavg
 http://blog.smartbear.com/software-quality/migrating-from-subversion-to-git-lessons-learned/
 
 
-  [1]: https://gitorious.org/svn2git%20svn2git
+  [1]: https://gitorious.org/svn2git/svn2git
   [2]: https://github.com/peter-murach/github_cli
