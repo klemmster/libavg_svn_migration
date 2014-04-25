@@ -1,6 +1,6 @@
 02L = oxullo <x@brainrapers.org>
 artcom = artcom <artcom@libavg.de>
-benediktseidl = benediktseidl <benediktseidl@libavg.de>
+benediktseidl = BenediktSeidl <Benedikt.Seidl@gmx.de>
 coder = coder <coder@libavg.de>
 dysman = dysman <dysman@libavg.de>
 erlehmann = erlehmann <erlehmann@libavg.de>
