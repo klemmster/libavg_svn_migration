@@ -1,4 +1,4 @@
-02L = 02L <02L@libavg.de>
+02L = oxullo <x@brainrapers.org>
 artcom = artcom <artcom@libavg.de>
 benediktseidl = benediktseidl <benediktseidl@libavg.de>
 coder = coder <coder@libavg.de>
@@ -23,7 +23,7 @@ michael = michael <michael@libavg.de>
 mku = mku <mku@libavg.de>
 mtc = mtc <mtc@libavg.de>
 ng = ng <ng@libavg.de>
-oxullo = oxullo <oxullo@libavg.de>
+oxullo = oxullo <x@brainrapers.org>
 pascal = pascal <pascal@libavg.de>
 richy = klemmster <richy@coding-reality.de>
 robert = robert <robert@libavg.de>
