@@ -6,7 +6,7 @@ end repository
 #
 # webpage
 
-create repository www
+create repository legacy-www
 end repository
 
 #
@@ -199,7 +199,7 @@ end match
 #
 # web rules
 match /trunk/www/
-  repository www
+  repository legacy-www
   branch master
 end match
 
