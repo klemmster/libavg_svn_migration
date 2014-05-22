@@ -212,7 +212,7 @@ end match
 
 match /branches/releases/([^/]+)/
   repository libavg
-  branch tag--\1
+  branch releases/\1
 end match
 
 #

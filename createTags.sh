@@ -8,9 +8,11 @@ cd $DIR
 
 find libavg_git -mindepth 1 -maxdepth 1 -type d -exec sh -c ' \
     cd {} &&
+
     # create tags from tag-branches
-    git branch | sed s/..// | grep tag-- | sed s/tag--// |
+    git branch | sed s/..// | grep tag-- | sed s/tag--// | sed s/release// | sed s/ver// |
     while read tagname; do
+        echo $tagname;
        git tag -a "$tagname" -m "Tag imported from SVN." "tag--$tagname" >/dev/null 2>/dev/null && echo "tagged: $tagname"
     done
 
