@@ -2,7 +2,7 @@
 Trying to push your latest and greatest changes to libavg's svn you were confronted with the following message:
 
     svn is now read only, for more information visit:
-    https://www.libavg.de/blog/make-the-switch-to-git
+    https://github.com/klemmster/libavg_svn_migration/blob/master/migrate_help.md
     
 *libavg* has been moved to github for good.
 The following instruction should help you get started and save dangling changes.
@@ -50,7 +50,7 @@ git config --global color.ui true
   
 7. Check out libavg from github
 
-  If your name is missing either complain to richy coding-reality.de or go go back to [6](#6. Check Credentials) now.
+  If your name is missing either complain to <richy@coding-reality.de> or go back to [6](#6. Check Credentials) now.
 
     ```git clone https://github.com/libavg/libavg.git```
     
